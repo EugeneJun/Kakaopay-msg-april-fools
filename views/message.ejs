@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kakao JavaScript SDK</title>
+    <link rel="stylesheet" href="/css/master.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
+      Kakao.init('339571d02f94fa7e42d2dc81a7828070');
+
+      // SDK 초기화 여부를 판단합니다.
+      console.log(Kakao.isInitialized());
+    </script>
+  </head>
+  <body>
+    <a id="create-kakao-link-btn" href="javascript:;">
+      <img
+              src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+      />
+    </a>
+    <script type="text/javascript">
+      Kakao.Link.createDefaultButton({
+        container: '#create-kakao-link-btn',
+        objectType: 'feed',
+        content: {
+          title: '2,000,000원을 받으세요.',
+          imageUrl:
+                  'https://i.ibb.co/VjPtrM8/1.png',
+          imageWidth: 530,
+          imageHeight: 300,
+          link: {
+            mobileWebUrl: 'http://하이.민수곽최고.메인.한국',
+            webUrl: 'http://하이.민수곽최고.메인.한국',
+          },
+        },
+        buttons: [
+          {
+            title: '받기',
+            link: {
+              mobileWebUrl: 'http://민수곽최고.메인.한국',
+            },
+          },
+        ]
+      })
+    </script>
+  </body>
+</html>
