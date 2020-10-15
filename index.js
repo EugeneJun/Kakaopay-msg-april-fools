@@ -1,12 +1,14 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 const fs = require('fs');
+require('dotenv').config();
 
 app.set('view engine','ejs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/message', function(req,res){
-  res.render('message');
+  console.log(process.env.KAKAO_JAVASCRIPT_KEY);
+  res.render('message', {KAKAO_JAVASCRIPT_KEY: process.env.KAKAO_JAVASCRIPT_KEY});
 });
 
 app.get('/imgs/money', function(req, res){
